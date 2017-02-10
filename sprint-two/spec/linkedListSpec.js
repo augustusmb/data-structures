@@ -50,6 +50,15 @@ describe('linkedList', function() {
     linkedList.removeHead();
     expect(linkedList.contains(4)).to.equal(false);
   });
+  it('should work as expected when removeHead is called more times than their are items', function() {
+    linkedList.addToTail(4);
+    linkedList.addToTail(5);
+    linkedList.removeHead();
+    linkedList.removeHead();
+    linkedList.removeHead();
+    linkedList.addToTail(6);
+    expect(linkedList.contains(6)).to.equal(true);
+  });
 
   // add more tests here to test the functionality of linkedList
 });
