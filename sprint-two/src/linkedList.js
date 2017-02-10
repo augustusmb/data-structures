@@ -15,11 +15,23 @@ var LinkedList = function() {
       list.tail = current;
     }
   };
+
   list.removeHead = function() {
-    var removed = list.head.value;
-    list.head = list.head.next; 
-    return removed;
+    if (list.head === null && list.tail === null) {
+      return;
+    } else if (list.head.next === null) {
+      headValue = false;
+      var lastVal = list.head.value;
+      list.head = null;
+      list.tail = null;
+      return lastVal;
+    } else {
+      var removed = list.head.value;
+      list.head = list.head.next; 
+      return removed;
+    }
   };
+
   list.contains = function(target) {
     for (var key in list) {
       if (list[key].value === target) {
