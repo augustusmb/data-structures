@@ -6,12 +6,17 @@ var BinarySearchTree = function(value) {
 
 BinarySearchTree.prototype.insert = function(value) {
   // if value === this.value
-  if ()
+  if (this.value = value) {
     // do nothing
+  } else if (value > this.value) {
   // else if value > this.value
-   // set right property to value
+    // set right property to value
+    this.right = value;
+  } else {
   // else
     // set left property to value
+    this.left = value;
+  }
 };
 
 BinarySearchTree.prototype.contains = function() {
